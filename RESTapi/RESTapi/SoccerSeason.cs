@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RESTapi
 {
-    public class REST
+    class SoccerSeason
     {
     }
 }
