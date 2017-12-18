@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SoccerSeasonForm
-{
     public class SoccerSeason
     {
         public string sID { get; set; }
@@ -17,4 +15,4 @@ namespace SoccerSeasonForm
         public string sNumberOfGames { get; set; }
         public string sLastUpdated { get; set; }
     }
-}
+

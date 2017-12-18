@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SoccerSeasonForm.Properties
+namespace SoccerSeasonsForm.Properties
 {
 
 

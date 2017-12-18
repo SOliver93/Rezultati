@@ -1,4 +1,4 @@
-﻿namespace SoccerSeasonForm
+﻿namespace SoccerSeasonsForm
 {
     partial class SoccerSeasonsForm
     {
@@ -35,17 +35,17 @@
             // dataGridViewSeasons
             // 
             this.dataGridViewSeasons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSeasons.Location = new System.Drawing.Point(12, 53);
+            this.dataGridViewSeasons.Location = new System.Drawing.Point(12, 54);
             this.dataGridViewSeasons.Name = "dataGridViewSeasons";
-            this.dataGridViewSeasons.Size = new System.Drawing.Size(1445, 565);
+            this.dataGridViewSeasons.Size = new System.Drawing.Size(1323, 538);
             this.dataGridViewSeasons.TabIndex = 0;
-            this.dataGridViewSeasons.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSeasons_CellContentClick);
+            this.dataGridViewSeasons.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // SoccerSeasonsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1469, 630);
+            this.ClientSize = new System.Drawing.Size(1347, 604);
             this.Controls.Add(this.dataGridViewSeasons);
             this.Name = "SoccerSeasonsForm";
             this.Text = "Soccer Seasons";

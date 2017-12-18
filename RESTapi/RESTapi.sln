@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTapi", "RESTapi\RESTapi.csproj", "{7E3440F1-A908-4384-94E5-2DFA2FCE97B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoccerSeasonForm", "SoccerSeasonForm\SoccerSeasonForm.csproj", "{9677D7AF-2C88-49EE-A68C-43A218EECC50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoccerSeasonsForm", "SoccerSeasonsForm\SoccerSeasonsForm.csproj", "{F4790AE2-CF91-41A7-9325-F482A2994198}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{7E3440F1-A908-4384-94E5-2DFA2FCE97B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E3440F1-A908-4384-94E5-2DFA2FCE97B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E3440F1-A908-4384-94E5-2DFA2FCE97B7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9677D7AF-2C88-49EE-A68C-43A218EECC50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9677D7AF-2C88-49EE-A68C-43A218EECC50}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9677D7AF-2C88-49EE-A68C-43A218EECC50}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9677D7AF-2C88-49EE-A68C-43A218EECC50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4790AE2-CF91-41A7-9325-F482A2994198}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4790AE2-CF91-41A7-9325-F482A2994198}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4790AE2-CF91-41A7-9325-F482A2994198}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4790AE2-CF91-41A7-9325-F482A2994198}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
