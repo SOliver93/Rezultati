@@ -9,6 +9,7 @@ using System.Threading.Tasks;
         public string sID { get; set; }
         public string sCaption { get; set; }
         public string sLeague { get; set; }
+        public string sYear { get; set; }
         public string sCurrentMatchday { get; set; }
         public string sNumberOfMatchdays { get; set; }
         public string sNumberOfTeams { get; set; }
