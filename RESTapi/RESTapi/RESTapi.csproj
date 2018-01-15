@@ -45,10 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fixtures.cs" />
     <Compile Include="LeagueTable.cs" />
     <Compile Include="REST.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SoccerSeason.cs" />
+    <Compile Include="Teams.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

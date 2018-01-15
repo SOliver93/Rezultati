@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace RESTapi
 {
@@ -14,12 +15,16 @@ namespace RESTapi
     {
         public List<SoccerSeason> lSeasons = new List<SoccerSeason>();
         public List<LeagueTable> lLeague = new List<LeagueTable>();
+        public List<Fixtures> lFixtures = new List<Fixtures>();
+        public List<Teams> lTeams = new List<Teams>();
         public static string CallRestMethod(string url)
         {
             HttpWebRequest webrequest = (HttpWebRequest)WebRequest.Create(url);
             webrequest.Method = "GET";
             webrequest.ContentType = "application/x-www-form-urlencoded";
             HttpWebResponse webresponse = (HttpWebResponse)webrequest.GetResponse();
+            var Response = webresponse.StatusCode;
+            //if(webresponse = 403)             
             Encoding enc = System.Text.Encoding.GetEncoding("utf-8");
             StreamReader responseStream = new StreamReader(webresponse.GetResponseStream(),
             enc);
@@ -35,7 +40,7 @@ namespace RESTapi
             string sJson = CallRestMethod(sUrl);
             JArray aJson = JArray.Parse(sJson);
             foreach (JObject item in aJson)
-            {
+            {                  
                 string ID = (string)item.GetValue("id");
                 string Caption = (string)item.GetValue("caption");
                 string League = (string)item.GetValue("league");
@@ -45,6 +50,9 @@ namespace RESTapi
                 string NumberOfTeams = (string)item.GetValue("numberOfTeams");
                 string NumberOfGames = (string)item.GetValue("numberOfGames");
                 string LastUpdated = (string)item.GetValue("lastUpdated");
+                string LeagueTable = (string)item["_links"]["leagueTable"]["href"];
+                string Fixtures = (string)item["_links"]["fixtures"]["href"];
+                string Teams = (string)item["_links"]["teams"]["href"];
                 lRESTSeasons.Add(new SoccerSeason
                 {
                     sID = ID,
@@ -55,44 +63,78 @@ namespace RESTapi
                     sNumberOfMatchdays = NumberOfMatchdays,
                     sNumberOfTeams = NumberOfTeams,
                     sNumberOfGames = NumberOfGames,
-                    sLastUpdated = LastUpdated
+                    sLastUpdated = LastUpdated,
+                    sLeagueTable = LeagueTable,
+                    sFixtures = Fixtures,
+                    sTeams = Teams
                 });
             }
             return lRESTSeasons;
-        }       
-        public List<LeagueTable> GetLeagueTable()
+        }
+        public List<LeagueTable> GetLeagueTable(string sUrl)
         {
-            List<LeagueTable> lRESTLeague = new List<LeagueTable>();
-            string sUrl = System.Configuration.ConfigurationManager.AppSettings["RestApiUrl"];
+            Debug.WriteLine(sUrl);                      
             string sJson = CallRestMethod(sUrl);
-            JArray aJson = JArray.Parse(sJson);
-            foreach (JObject item in aJson)
+            JObject oJson = JObject.Parse(sJson);
+            var oLeagueTable = oJson["standing"].ToList();
+            List<LeagueTable> lRESTLeague = new List<LeagueTable>();
+            for (int i = 0; i < oLeagueTable.Count; i++)
             {
-                string Position = (string)item.GetValue("position");
-                string TeamName = (string)item.GetValue("teamName");
-                string PlayedGames = (string)item.GetValue("playedGames");
-                string Points = (string)item.GetValue("points");
-                string Goals = (string)item.GetValue("goals");
-                string GoalsAgainst = (string)item.GetValue("goalsAgainst");
-                string GoalDifference = (string)item.GetValue("goalDifference");
-                string Wins = (string)item.GetValue("wins");
-                string Draws = (string)item.GetValue("draws");
-                string Loses = (string)item.GetValue("loses");
                 lRESTLeague.Add(new LeagueTable
                 {
-                    sPosition = Position,
-                    sTeamName = TeamName,
-                    sGamesPlayed = PlayedGames,
-                    sPoints = Points,
-                    sGoals = Goals,
-                    sGoalsAgainst = GoalsAgainst,
-                    sGoalDifference = GoalDifference,
-                    sWins = Wins,
-                    sDraws = Draws,
-                    sLoses = Loses
+                    sPosition = (string)oLeagueTable[i]["position"],
+                    sTeamName = (string)oLeagueTable[i]["teamName"],
+                    sGamesPlayed = (string)oLeagueTable[i]["playedGames"],
+                    sPoints = (string)oLeagueTable[i]["points"],
+                    sGoals = (string)oLeagueTable[i]["goals"],
+                    sGoalsAgainst = (string)oLeagueTable[i]["goalsAgainst"],
+                    sGoalDifference = (string)oLeagueTable[i]["goalDifference"],
+                    sWins = (string)oLeagueTable[i]["wins"],
+                    sDraws = (string)oLeagueTable[i]["draws"],
+                    sLosses = (string)oLeagueTable[i]["losses"]
+                });
+            }            
+            return lRESTLeague;
+        }
+
+        public List<Fixtures> GetFixtures(string sUrl2)
+        {
+            Debug.WriteLine(sUrl2);
+            string sJson = CallRestMethod(sUrl2);
+            JObject oJson = JObject.Parse(sJson);
+            var oFixtures = oJson["fixtures"].ToList();
+            List<Fixtures> lRESTFixtures = new List<Fixtures>();
+            for (int i = 0; i < oFixtures.Count; i++)
+            {
+                lRESTFixtures.Add(new Fixtures
+                {
+                    sFixtureDate = (string)oFixtures[i]["date"],
+                    sFixtureMatchday = (string)oFixtures[i]["matchday"],
+                    sHomeTeamName = (string)oFixtures[i]["homeTeamName"],
+                    sAwayTeamName = (string)oFixtures[i]["awayTeamName"],
+                    sGoalsHomeTeam = (string)oFixtures[i]["result"]["goalsHomeTeam"],
+                    sGoalsAwayTeam = (string)oFixtures[i]["result"]["goalsAwayTeam"],                    
                 });
             }
-            return lRESTLeague;
+            return lRESTFixtures;
+        }
+
+        public List<Teams> GetTeams(string sUrl3)
+        {
+            Debug.WriteLine(sUrl3);
+            string sJson = CallRestMethod(sUrl3);
+            JObject oJson = JObject.Parse(sJson);
+            var oTeams = oJson["teams"].ToList();
+            List<Teams> lRESTTeams = new List<Teams>();
+            for (int i = 0; i < oTeams.Count; i++)
+            {
+                lRESTTeams.Add(new Teams
+                {
+                    sTeamName = (string)oTeams[i]["name"]                   
+                });
+            }
+            return lRESTTeams;
         }
     }               
 }
+

@@ -17,6 +17,6 @@ namespace RESTapi
         public string sGoalDifference { get; set; }
         public string sWins { get; set; }
         public string sDraws { get; set; }
-        public string sLoses { get; set; }        
+        public string sLosses { get; set; }
     }
 }

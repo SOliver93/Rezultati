@@ -38,6 +38,9 @@
             this.NumberOfTeams = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumberOfGames = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastUpdated = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Table = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fixtures = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Teams = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSeasons)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +56,10 @@
             this.NumberOfMatchdays,
             this.NumberOfTeams,
             this.NumberOfGames,
-            this.LastUpdated});
+            this.LastUpdated,
+            this.Table,
+            this.Fixtures,
+            this.Teams});
             this.dataGridViewSeasons.Location = new System.Drawing.Point(12, 54);
             this.dataGridViewSeasons.Name = "dataGridViewSeasons";
             this.dataGridViewSeasons.Size = new System.Drawing.Size(1323, 538);
@@ -65,6 +71,7 @@
             this.ID.DataPropertyName = "sID";
             this.ID.HeaderText = "Redni broj";
             this.ID.Name = "ID";
+            this.ID.Visible = false;
             // 
             // Caption
             // 
@@ -116,6 +123,28 @@
             this.LastUpdated.Name = "LastUpdated";
             this.LastUpdated.Width = 150;
             // 
+            // Table
+            // 
+            this.Table.DataPropertyName = "sLeagueTable";
+            this.Table.HeaderText = "Tablica lige";
+            this.Table.Name = "Table";
+            this.Table.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Table.Visible = false;
+            // 
+            // Fixtures
+            // 
+            this.Fixtures.DataPropertyName = "sFixtures";
+            this.Fixtures.HeaderText = "Odigrane utakmice";
+            this.Fixtures.Name = "Fixtures";
+            this.Fixtures.Visible = false;
+            // 
+            // Teams
+            // 
+            this.Teams.DataPropertyName = "sTeams";
+            this.Teams.HeaderText = "Timovi";
+            this.Teams.Name = "Teams";
+            this.Teams.Visible = false;
+            // 
             // SoccerSeasonsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,6 +170,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberOfTeams;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberOfGames;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastUpdated;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Table;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fixtures;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Teams;
     }
 }
 
