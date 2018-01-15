@@ -39,7 +39,11 @@
             this.wins = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.draws = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loses = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.izbornikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.izlazToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLeague)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewLeague
@@ -56,9 +60,9 @@
             this.wins,
             this.draws,
             this.loses});
-            this.dataGridViewLeague.Location = new System.Drawing.Point(12, 54);
+            this.dataGridViewLeague.Location = new System.Drawing.Point(12, 27);
             this.dataGridViewLeague.Name = "dataGridViewLeague";
-            this.dataGridViewLeague.Size = new System.Drawing.Size(1342, 567);
+            this.dataGridViewLeague.Size = new System.Drawing.Size(1342, 594);
             this.dataGridViewLeague.TabIndex = 0;
             this.dataGridViewLeague.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLeague_CellContentClick);
             // 
@@ -122,16 +126,46 @@
             this.loses.HeaderText = "Porazi";
             this.loses.Name = "loses";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.izbornikToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1366, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // izbornikToolStripMenuItem
+            // 
+            this.izbornikToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.izlazToolStripMenuItem});
+            this.izbornikToolStripMenuItem.Name = "izbornikToolStripMenuItem";
+            this.izbornikToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.izbornikToolStripMenuItem.Text = "Izbornik";
+            // 
+            // izlazToolStripMenuItem
+            // 
+            this.izlazToolStripMenuItem.Name = "izlazToolStripMenuItem";
+            this.izlazToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.izlazToolStripMenuItem.Text = "Izlaz";
+            this.izlazToolStripMenuItem.Click += new System.EventHandler(this.izlazToolStripMenuItem_Click);
+            // 
             // FormLeague
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 633);
             this.Controls.Add(this.dataGridViewLeague);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormLeague";
             this.Text = "League Table";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLeague)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -148,5 +182,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn wins;
         private System.Windows.Forms.DataGridViewTextBoxColumn draws;
         private System.Windows.Forms.DataGridViewTextBoxColumn loses;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem izbornikToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem izlazToolStripMenuItem;
     }
 }

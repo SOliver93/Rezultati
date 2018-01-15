@@ -26,5 +26,10 @@ namespace SoccerSeasonsForm
             dataGridViewTeams.DataSource = lTeams;
         }
         public SoccerSeasonsForm WindowsFormUser { get; private set; }
+
+        private void izlazToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

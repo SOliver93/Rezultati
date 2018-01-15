@@ -41,7 +41,11 @@
             this.Table = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fixtures = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Teams = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.izbornikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.izlazToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSeasons)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewSeasons
@@ -60,9 +64,9 @@
             this.Table,
             this.Fixtures,
             this.Teams});
-            this.dataGridViewSeasons.Location = new System.Drawing.Point(12, 54);
+            this.dataGridViewSeasons.Location = new System.Drawing.Point(12, 27);
             this.dataGridViewSeasons.Name = "dataGridViewSeasons";
-            this.dataGridViewSeasons.Size = new System.Drawing.Size(1323, 538);
+            this.dataGridViewSeasons.Size = new System.Drawing.Size(1323, 565);
             this.dataGridViewSeasons.TabIndex = 0;
             this.dataGridViewSeasons.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -145,16 +149,46 @@
             this.Teams.Name = "Teams";
             this.Teams.Visible = false;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.izbornikToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1347, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // izbornikToolStripMenuItem
+            // 
+            this.izbornikToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.izlazToolStripMenuItem});
+            this.izbornikToolStripMenuItem.Name = "izbornikToolStripMenuItem";
+            this.izbornikToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.izbornikToolStripMenuItem.Text = "Izbornik";
+            // 
+            // izlazToolStripMenuItem
+            // 
+            this.izlazToolStripMenuItem.Name = "izlazToolStripMenuItem";
+            this.izlazToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.izlazToolStripMenuItem.Text = "Izlaz";
+            this.izlazToolStripMenuItem.Click += new System.EventHandler(this.izlazToolStripMenuItem_Click);
+            // 
             // SoccerSeasonsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1347, 604);
             this.Controls.Add(this.dataGridViewSeasons);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "SoccerSeasonsForm";
             this.Text = "Soccer Seasons";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSeasons)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -173,6 +207,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Table;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fixtures;
         private System.Windows.Forms.DataGridViewTextBoxColumn Teams;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem izbornikToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem izlazToolStripMenuItem;
     }
 }
 
