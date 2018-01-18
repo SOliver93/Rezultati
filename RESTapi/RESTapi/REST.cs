@@ -23,8 +23,7 @@ namespace RESTapi
             webrequest.Method = "GET";
             webrequest.ContentType = "application/x-www-form-urlencoded";
             HttpWebResponse webresponse = (HttpWebResponse)webrequest.GetResponse();
-            var Response = webresponse.StatusCode;
-            //if(webresponse = 403)             
+            var Response = webresponse.StatusCode;                        
             Encoding enc = System.Text.Encoding.GetEncoding("utf-8");
             StreamReader responseStream = new StreamReader(webresponse.GetResponseStream(),
             enc);
